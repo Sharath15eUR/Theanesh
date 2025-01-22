@@ -1,0 +1,19 @@
+➜  myscripts cd dir1
+➜  dir1 mkdir dir2
+➜  dir1 cd dir2
+➜  dir2 touch eg_file.txt
+➜  dir2 cd ..
+➜  dir1 cd ..
+➜  myscripts cd ..
+➜  ~ cd -
+~/myscripts
+➜  myscripts ls
+01_basic.sh  dir1  s1.txt
+➜  myscripts cd dir1        
+➜  dir1 ln -s dir2/eg_file.xt eg_file_of_dir2.txt
+➜  dir1 ls
+dir2  eg_file_of_dir2.txt
+➜  dir1 ls -ltr
+total 4
+drwxrwxr-x 2 kagami kagami 4096 Jan 22 21:25 dir2
+lrwxrwxrwx 1 kagami kagami   15 Jan 22 21:27 eg_file_of_dir2.txt -> dir2/eg_file.xt

@@ -1,0 +1,14 @@
+➜  ~ mkdir dir1
+➜  ~ cd dir1
+➜  dir1 touch f1.txt
+➜  dir1 touch f2.txt
+➜  dir1 touch f3.txt
+➜  dir1 ls 
+f1.txt  f2.txt  f3.txt
+➜  dir1 ls -lt > sorted.txt
+➜  dir1 cat sorted.txt
+total 0
+-rw-rw-r-- 1 kagami kagami 0 Jan 22 22:28 sorted.txt
+-rw-rw-r-- 1 kagami kagami 0 Jan 22 22:26 f3.txt
+-rw-rw-r-- 1 kagami kagami 0 Jan 22 22:26 f2.txt
+-rw-rw-r-- 1 kagami kagami 0 Jan 22 22:15 f1.txt

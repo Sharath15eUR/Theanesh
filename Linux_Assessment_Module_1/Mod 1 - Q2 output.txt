@@ -1,0 +1,14 @@
+➜  myscripts touch s1.txt
+➜  myscripts ls -al
+total 12
+drwxrwxr-x  2 kagami kagami 4096 Jan 22 21:11 .
+drwx------ 17 kagami kagami 4096 Jan 22 21:11 ..
+-rwxrwxr-x  1 kagami kagami  137 Jan 22 11:57 01_basic.sh
+-rw-rw-r--  1 kagami kagami    0 Jan 22 21:11 s1.txt
+➜  myscripts chmod g-w s1.txt
+➜  myscripts ls -al
+total 12
+drwxrwxr-x  2 kagami kagami 4096 Jan 22 21:11 .
+drwx------ 17 kagami kagami 4096 Jan 22 21:12 ..
+-rwxrwxr-x  1 kagami kagami  137 Jan 22 11:57 01_basic.sh
+-rw-r--r--  1 kagami kagami    0 Jan 22 21:11 s1.txt
