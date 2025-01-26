@@ -1,0 +1,4 @@
+server_host = localhost
+database_host = localhost 
+api_url = http://localhost:8080/api
+log = /var/log/localhost.log

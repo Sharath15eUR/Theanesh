@@ -1,0 +1,6 @@
+ubuntu@ubuntu:~$ ip route| grep default|awk '{print $3}' | sort
+192.168.32.2
+ubuntu@ubuntu:~$ ip route 
+default via 192.168.32.2 dev ens33 proto dhcp src 192.168.32.132 metric 100 
+192.168.32.0/24 dev ens33 proto kernel scope link src 192.168.32.132 metric 100 
+

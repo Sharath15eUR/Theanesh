@@ -1,0 +1,5 @@
+ubuntu@ubuntu:~$ ./script.sh
+The process with the highest memory usage is PID: 9234 (Isolated Web Co)
+Do you want to terminate this process? (y/n): y
+Process 9234 (Isolated Web Co) has been terminated.
+

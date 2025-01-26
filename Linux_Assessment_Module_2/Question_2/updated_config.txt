@@ -1,0 +1,4 @@
+server_host = 127.0.0.1
+database_host = 127.0.0.1 
+api_url = http://127.0.0.1:8080/api
+log = /var/log/127.0.0.1.log

@@ -1,0 +1,13 @@
+ubuntu@ubuntu:~$ touch config.txt
+ubuntu@ubuntu:~$ cat config.txt
+server_host = localhost
+database_host = localhost 
+api_url = http://localhost:8080/api
+log = /var/log/localhost.log
+ubuntu@ubuntu:~$ sed 's/localhost/127.0.0.1/g' config.txt > updated_config.txt
+ubuntu@ubuntu:~$ cat updated_config.txt
+server_host = 127.0.0.1
+database_host = 127.0.0.1 
+api_url = http://127.0.0.1:8080/api
+log = /var/log/127.0.0.1.log
+

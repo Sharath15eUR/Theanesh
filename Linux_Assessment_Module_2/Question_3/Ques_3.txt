@@ -1,0 +1,6 @@
+ubuntu@ubuntu:~$ grep "ERROR" log.txt | grep -v "DEBUG" > updated_log.txt
+ubuntu@ubuntu:~$ cat updated_log.txt
+ERROR: Unable to connect to the database.
+ERROR: Failed to fetch data from API endpoint '/users'.
+ERROR: Missing required parameter in the request.
+
