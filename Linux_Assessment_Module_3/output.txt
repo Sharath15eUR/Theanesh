@@ -1,0 +1,22 @@
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ echo "Helllo world" > ~/source/file1.txt       
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ echo "Linux assessment module 3" > ~/source/file2.txt
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ./backup_manager.sh ~/source ~/backup .txt
+Files to back up:
+file1.txt - Size: 4.0K
+file2.txt - Size: 4.0K
+Backed up: file1.txt
+Backed up: file2.txt
+Backup completed successfully. Report saved to /home/makunochiippo/backup/backup_report.log
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ cat ~/backup/backup_report.log
+Backup Summary Report
+-----------------------
+Total files processed: 2
+Total size of files backed up: 39
+Backup directory: /home/makunochiippo/backup
