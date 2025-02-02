@@ -1,0 +1,40 @@
+1. Recursive function output & Special Parameters used :
+
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ./file_analyze.sh -d logs -k error                               
+Script name: ./file_analyze.sh
+Number of arguments: 4
+All arguments: -d logs -k error
+Found 'error' in logs/app.log
+
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ./file_analyze.sh -d logs -k database          
+Script name: ./file_analyze.sh
+Number of arguments: 4
+All arguments: -d logs -k database
+Found 'database' in logs/db/db.log
+
+2. Error handling
+
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ./file_analyze.sh -d log -k error             
+Script name: ./file_analyze.sh
+Number of arguments: 4
+All arguments: -d log -k error
+[ERROR] Invalid directory: log
+
+3. Here string usage and finding pattern 
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ./file_analyze.sh -d logs -f scripts.sh -k vote
+Script name: ./file_analyze.sh
+Number of arguments: 6
+All arguments: -d logs -f scripts.sh -k vote
+Found 'vote' in logs/scripts.sh
+
+4. Validate inputs :
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ./file_analyze.sh -f sample.txt -k @@@                           
+Script name: ./file_analyze.sh
+Number of arguments: 4
+All arguments: -f sample.txt -k @@@
+[ERROR] Invalid or empty keyword (must be alphanumeric)
