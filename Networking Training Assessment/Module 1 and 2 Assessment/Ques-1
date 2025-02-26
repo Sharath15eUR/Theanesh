@@ -1,0 +1,74 @@
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ scp -r ~/just makunochiippo@makunochi:/home/makunochiippo/dir/folder
+makunochiippo@makunochi's password: 
+f3.txt                                                                                                                              100%    0     0.0KB/s   00:00    
+f2.txt                                                                                                                              100%    0     0.0KB/s   00:00    
+d1.txt                                                                                                                              100%    0     0.0KB/s   00:00    
+d2.txt                                                                                                                              100%    0     0.0KB/s   00:00    
+f1.txt                                                                                                                              100%    0     0.0KB/s   00:00    
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ cd dir/folder
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~/dir/folder]
+└─$ ls
+just
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~/dir/folder]
+└─$ cd just      
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~/dir/folder/just]
+└─$ ls
+chumma  f1.txt  f2.txt  f3.txt
+
+
+
+
+          Here , At first I have enabled SSH port for using SCP command and passed to copy the folder with contents to another destination  
+                  
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ sudo systemctl start ssh
+[sudo] password for makunochiippo: 
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ systemctl status ssh    
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/usr/lib/systemd/system/ssh.service; disabled; preset: disabled)
+     Active: active (running) since Wed 2025-02-26 09:22:44 IST; 6s ago
+ Invocation: 8cee645dd15a42bd84ba4af0d05b491d
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+    Process: 4465 ExecStartPre=/usr/sbin/sshd -t (code=exited, status=0/SUCCESS)
+   Main PID: 4466 (sshd)
+      Tasks: 1 (limit: 4852)
+     Memory: 1.9M (peak: 2.3M)
+        CPU: 33ms
+     CGroup: /system.slice/ssh.service
+             └─4466 "sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups"
+
+Feb 26 09:22:44 makunochi systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Feb 26 09:22:44 makunochi sshd[4466]: Server listening on 0.0.0.0 port 22.
+Feb 26 09:22:44 makunochi sshd[4466]: Server listening on :: port 22.
+Feb 26 09:22:44 makunochi systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ sudo systemctl enable ssh
+Synchronizing state of ssh.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable ssh
+Created symlink '/etc/systemd/system/sshd.service' → '/usr/lib/systemd/system/ssh.service'.
+Created symlink '/etc/systemd/system/multi-user.target.wants/ssh.service' → '/usr/lib/systemd/system/ssh.service'.
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ sudo netstat -tnlp | grep ssh
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      4466/sshd: /usr/sbi 
+tcp6       0      0 :::22                   :::*                    LISTEN      4466/sshd: /usr/sbi 
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ scp -r ~/just makunochiippo@makunochi:/home/makunochiippo/dir/folder
+The authenticity of host 'makunochi (127.0.1.1)' can't be established.
+ED25519 key fingerprint is SHA256:0rEv600jVlNiZkrvd+8sbLUlQRdFczVzSeIpIrxnges.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'makunochi' (ED25519) to the list of known hosts.
+makunochiippo@makunochi's password: 

@@ -1,0 +1,56 @@
+Installing vsftpd for File Transfer Protocol
+
+┌──(makunochiippo㉿makunochi)-[~/dir/folder/just]
+└─$ sudo apt install vsftpd      
+[sudo] password for makunochiippo: 
+Installing:                     
+  vsftpd
+
+Summary:
+  Upgrading: 0, Installing: 1, Removing: 0, Not Upgrading: 1111
+  Download size: 143 kB
+  Space needed: 352 kB / 0 B available
+
+Get:1 http://kali.download/kali kali-rolling/main amd64 vsftpd amd64 3.0.5-0.1 [143 kB]
+Fetched 143 kB in 21s (6,792 B/s)
+Preconfiguring packages ...
+Selecting previously unselected package vsftpd.
+(Reading database ... 400358 files and directories currently installed.)
+Preparing to unpack .../vsftpd_3.0.5-0.1_amd64.deb ...
+Unpacking vsftpd (3.0.5-0.1) ...
+Setting up vsftpd (3.0.5-0.1) ...
+/usr/lib/tmpfiles.d/vsftpd.conf:1: Line references path below legacy directory /var/run/, updating /var/run/vsftpd/empty → /run/vsftpd/empty; please update the tmpfiles.d/ drop-in file accordingly.
+update-rc.d: We have no instructions for the vsftpd init script.
+update-rc.d: It looks like a network service, we disable it.
+Processing triggers for man-db (2.13.0-1) ...
+Processing triggers for kali-menu (2024.4.0) ...
+Warning: More space needed than available: 352 kB > 0 B, installation may fail
+
+
+
+Using SFTP,
+
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ sftp makunochiippo@localhost
+The authenticity of host 'localhost (::1)' can't be established.
+ED25519 key fingerprint is SHA256:0rEv600jVlNiZkrvd+8sbLUlQRdFczVzSeIpIrxnges.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:1: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'localhost' (ED25519) to the list of known hosts.
+makunochiippo@localhost's password: 
+Connected to localhost.
+sftp> put file1.txt
+Uploading file1.txt to /home/makunochiippo/file1.txt
+file1.txt                                                                                                                           100%    0     0.0KB/s   00:00    
+sftp> cd dir
+sftp> get file1.txt
+File "/home/makunochiippo/dir/file1.txt" not found.
+sftp> cd ..
+sftp> get file1.txt
+Fetching /home/makunochiippo/file1.txt to file1.txt
+sftp> get file1.txt /home/makunochiippo/dir
+Fetching /home/makunochiippo/file1.txt to /home/makunochiippo/dir/file1.txt
+sftp> cd dir 
+sftp> ls
+file1.txt  
