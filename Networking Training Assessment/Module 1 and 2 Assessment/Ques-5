@@ -1,0 +1,7 @@
+When duplicate IP's are configured ,
+   It may lead to data packet loss due to misleading way of confused state in checking original address
+   It breaches the secured way in communication causing risks
+   Some operating systems (like Windows) disable the network interface when a duplicate IP is detected.
+   
+  To Identify we can using "arp -a"  command to check IP - MAC relation and find any duplicate address.
+  When manually assigning static IP addresses, double-check that they are not already in use by other devices.

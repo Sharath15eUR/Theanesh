@@ -1,0 +1,27 @@
+VNC Viewer
+
+     Install the RealVNC server or any other available
+     Identify the IP address by passing ifconfig
+     Enable VNC server on remote system passing with password
+      Connection : 
+            Enter IP address with port 
+            Provide the password
+      Connection is established with it
+      
+AnyDesk / Teamviewer
+     Install the application in the remote system to be used
+     Note down the 9 digit code to pass the connection
+     It requests to the remote system to accept the connection
+     Once accepted , connection established
+     
+Remote Desktop Connection
+     RDP used only in Windows
+     Enable the Remote Desktop Option in the settings
+     Note down the ip address by "ipconfig" of the remote system
+     On your local system, press Win + R and type " mstsc ".
+     Enter the remote system’s IP address and click Connect.
+     Enter the username and password of the remote system.
+     Connection establised between the systems
+     
+
+     
