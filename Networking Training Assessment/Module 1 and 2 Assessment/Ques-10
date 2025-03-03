@@ -1,0 +1,10 @@
+DHCP (Dynamic Host Configuration Protocol) server automatically assigns IP addresses and other network configurations (subnet mask, gateway, DNS) to devices on a network. This process is called Dynamic IP Allocation.
+
+4 steps involved in DHCP IP allocation: 
+
+    Step	             Device	                    IP Address	              Message Sent
+1️⃣ Discover	        Laptop  (Client)	         0.0.0.0	    DHCP Discover (Who can give me an IP?)
+2️⃣ Offer	        Router  (DHCP Server)	       192.168.1.100	    DHCP Offer (Use 192.168.1.100)
+3️⃣ Request	        Laptop  (Client)	       192.168.1.100	    DHCP Request (I accept 192.168.1.100)
+4️⃣ Acknowledgment	Router (DHCP Server)	       192.168.1.100	    DHCP ACK (You can use 192.168.1.100)
+

@@ -1,0 +1,37 @@
+Default Gateway : 
+
+It acts as an intermediary between your computer and external networks.
+
+To find default gateway 
+ ip route | grep default - command to find the ip address
+ 
+ By testing connectivity and tracing the route we can check the default gateway working
+ 
+ ┌──(makunochiippo㉿makunochi)-[~]
+└─$ ip route | grep default
+default via 192.168.32.2 dev eth0 proto dhcp src 192.168.32.136 metric 100 
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ping 192.168.32.2  
+PING 192.168.32.2 (192.168.32.2) 56(84) bytes of data.
+64 bytes from 192.168.32.2: icmp_seq=1 ttl=128 time=0.193 ms
+64 bytes from 192.168.32.2: icmp_seq=2 ttl=128 time=0.484 ms
+64 bytes from 192.168.32.2: icmp_seq=3 ttl=128 time=0.183 ms
+64 bytes from 192.168.32.2: icmp_seq=4 ttl=128 time=0.422 ms
+c64 bytes from 192.168.32.2: icmp_seq=5 ttl=128 time=0.453 ms
+64 bytes from 192.168.32.2: icmp_seq=6 ttl=128 time=0.322 ms
+^C
+--- 192.168.32.2 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5125ms
+rtt min/avg/max/mdev = 0.183/0.342/0.484/0.120 ms
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ traceroute 192.168.32.2  
+traceroute to 192.168.32.2 (192.168.32.2), 30 hops max, 60 byte packets
+ 1  * * *
+ 2  * * *
+ 3  * * *
+ 4  * * *
+ 5  * * *
+ 6  *
+ * *
