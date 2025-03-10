@@ -1,0 +1,93 @@
+SSH connection :
+
+1. Through ifconfig verified the ip address to connect
+2. Ping to check packets are able to receive or not 
+3. ssh user@ip to connect through ssh
+
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ifconfig               
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.32.136  netmask 255.255.255.0  broadcast 192.168.32.255
+        inet6 fe80::20c:29ff:feab:2a71  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:ab:2a:71  txqueuelen 1000  (Ethernet)
+        RX packets 225  bytes 14462 (14.1 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 47  bytes 6236 (6.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 2443  bytes 245596 (239.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2443  bytes 245596 (239.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ping -c 5 192.168.32.136
+PING 192.168.32.136 (192.168.32.136) 56(84) bytes of data.
+64 bytes from 192.168.32.136: icmp_seq=1 ttl=64 time=0.015 ms
+64 bytes from 192.168.32.136: icmp_seq=2 ttl=64 time=0.050 ms
+64 bytes from 192.168.32.136: icmp_seq=3 ttl=64 time=0.016 ms
+64 bytes from 192.168.32.136: icmp_seq=4 ttl=64 time=0.039 ms
+64 bytes from 192.168.32.136: icmp_seq=5 ttl=64 time=0.061 ms
+
+--- 192.168.32.136 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4097ms
+rtt min/avg/max/mdev = 0.015/0.036/0.061/0.018 ms
+                                                                                                                                                                      
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ssh makunochiippo@192.168.32.136                                    
+makunochiippo@192.168.32.136's password: 
+Linux makunochi 6.11.2-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.11.2-1kali1 (2024-10-15) x86_64
+
+The programs included with the Kali GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Mar  7 12:18:39 2025 from 192.168.32.136
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ 
+
+
+
+Telnet connection : 
+
+sudo nano /etc/xinetd.d/telnet
+
+telnetd contains these code permissions : 
+
+service telnet
+{
+    disable         = no
+    socket_type     = stream
+    wait            = no
+    user            = root
+    server          = /usr/sbin/telnetd
+    log_on_failure  += USERID
+}
+
+
+
+
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ sudo systemctl restart xinetd           
+                                                                                                                                                                       
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ sudo systemctl enable  xinetd 
+Synchronizing state of xinetd.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable xinetd
+                                                                                                                                                                       
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ ss -tnlp | grep 23
+LISTEN 0      64                 *:23              *:*          
+                                                                                                                                                                       
+┌──(makunochiippo㉿makunochi)-[~]
+└─$ sudo netstat -tulnp | grep 23
+tcp6       0      0 :::23                   :::*                    LISTEN      44151/xinetd        
+udp        0      0 239.255.255.250:3702    0.0.0.0:*                           5243/python3        
+                                                                                                  
