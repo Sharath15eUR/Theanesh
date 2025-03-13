@@ -1,0 +1,128 @@
+Original IP : 
+
+──(one-punch-man㉿saitama)-[~]
+└─$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.32.137  netmask 255.255.255.0  broadcast 192.168.32.255
+        inet6 fe80::20c:29ff:fe3a:9a37  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:3a:9a:37  txqueuelen 1000  (Ethernet)
+        RX packets 17  bytes 1550 (1.5 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 31  bytes 5434 (5.3 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 8  bytes 480 (480.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 480 (480.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+                                                                                                                                                 
+┌──(one-punch-man㉿saitama)-[~]
+└─$ ip addr 
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:3a:9a:37 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.32.137/24 brd 192.168.32.255 scope global dynamic noprefixroute eth0
+       valid_lft 1745sec preferred_lft 1745sec
+    inet6 fe80::20c:29ff:fe3a:9a37/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+            
+            
+by using " sudo nano /etc/network/interfaces "
+changing the ip and gateway
+
+┌──(one-punch-man㉿saitama)-[~]
+└─$ cat /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+    address 192.168.1.100   
+    netmask 255.255.255.0    
+    gateway 192.168.32.2      
+    dns-nameservers 8.8.8.8 
+                               
+
+Now using ifconfig ,
+┌──(one-punch-man㉿saitama)-[~]
+└─$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.100  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::20c:29ff:fe3a:9a37  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:3a:9a:37  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 27  bytes 3703 (3.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 12  bytes 860 (860.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 860 (860.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+                          
+MAC address modified
+
+                                                                                                                                        
+┌──(one-punch-man㉿saitama)-[~]
+└─$ sudo macchanger -m 00:16:17:AA:BB:CC eth0
+
+Current MAC:   00:0c:29:3a:9a:37 (VMware, Inc.)
+Permanent MAC: 00:0c:29:3a:9a:37 (VMware, Inc.)
+New MAC:       00:16:17:aa:bb:cc (MSI)
+        
+
+Ping is working : 
+
+──(one-punch-man㉿saitama)-[~]
+└─$ ping 192.168.32.2
+PING 192.168.32.2 (192.168.32.2) 56(84) bytes of data.
+64 bytes from 192.168.32.2: icmp_seq=1 ttl=128 time=0.170 ms
+64 bytes from 192.168.32.2: icmp_seq=2 ttl=128 time=0.396 ms
+64 bytes from 192.168.32.2: icmp_seq=3 ttl=128 time=0.450 ms
+^C
+--- 192.168.32.2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2027ms
+rtt min/avg/max/mdev = 0.170/0.338/0.450/0.121 ms
+                                                                                                                                                                      
+┌──(one-punch-man㉿saitama)-[~]
+└─$ ping 8.8.8.8     
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=128 time=11.6 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=128 time=12.1 ms
+64 bytes from 8.8.8.8: icmp_seq=3 ttl=128 time=12.1 ms
+^C
+--- 8.8.8.8 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 11.554/11.919/12.122/0.259 ms
+                                                                                                                                                                      
+┌──(one-punch-man㉿saitama)-[~]
+└─$ ping google.com
+PING google.com (142.250.206.46) 56(84) bytes of data.
+64 bytes from google.com (142.250.206.46): icmp_seq=1 ttl=128 time=11.4 ms
+64 bytes from google.com (142.250.206.46): icmp_seq=2 ttl=128 time=12.2 ms
+64 bytes from google.com (142.250.206.46): icmp_seq=3 ttl=128 time=12.3 ms
+^C
+--- google.com ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 11.388/11.970/12.274/0.411 ms
+                 

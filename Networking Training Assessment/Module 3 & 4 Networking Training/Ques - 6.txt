@@ -1,0 +1,17 @@
+﻿Ethernet Data Transmission in Linux Kernel
+1. Start: Ethernet Device (Network Card) Has Data
+The network interface card (NIC) either receives data from the network or has data to send.
+2. Driver: Communicates with Hardware
+The NIC driver in the Linux kernel initializes the hardware, manages settings, and facilitates sending/receiving data.
+3. Net Device: Kernel Registers the Interface
+The Linux kernel recognizes the network interface and assigns it a name (e.g., eth0), making it available for networking operations.
+4. Packet Handling (sk_buff Structure)
+Data is packed into a socket buffer (sk_buff), a key structure used by the Linux kernel for networking.
+5. Receive Path: Efficient Packet Processing (NAPI)
+Incoming packets are handled by NAPI (New API), which efficiently processes them while reducing CPU overhead.
+6. Send Path: Queueing and Scheduling (Qdisc)
+Outgoing packets are queued and scheduled by the queueing discipline (Qdisc) before being sent out.
+7. Address Resolution (ARP)
+Before sending, the kernel finds the correct destination MAC address using ARP (Address Resolution Protocol), and the driver adds the necessary Ethernet headers.
+8. End: Data Sent or Received Over Ethernet
+The network device transmits the packet to the network, or delivers received packets to the appropriate process.
