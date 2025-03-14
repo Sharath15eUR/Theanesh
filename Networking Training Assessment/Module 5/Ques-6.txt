@@ -1,0 +1,41 @@
+﻿Classes Identification : 
+
+Class A: 0.0.0.0 to 127.255.255.255 
+Class B: 128.0.0.0 to 191.255.255.255 
+Class C: 192.0.0.0 to 223.255.255.255 
+
+
+10.1.1.1: The first octet is 10, which falls in the range 0–127. This is a Class A address.
+
+
+172.16.5.10: The first octet is 172, which falls in the range 128–191. This is a Class B address.
+
+
+192.168.1.5: The first octet is 192, which falls in the range 192–223. This is a Class C address.
+
+
+Default Subnet Mask of classes :
+ 
+Class A: Default subnet mask is 255.0.0.0 (/8), where the first octet is the network portion, and the remaining three octets are the host portion.
+
+
+Class B: Default subnet mask is 255.255.0.0 (/16), where the first two octets are the network portion, and the last two octets are the host portion.
+
+
+Class C: Default subnet mask is 255.255.255.0 (/24), where the first three octets are the network portion, and the last octet is the host portion.
+
+
+Range of IP addresses of each class : 
+
+
+Class A: 1.0.0.0 to 126.255.255.255
+First octet handles the network portion and other acts for the Host portion
+
+
+Class B: 128.1.0.0 to 191.255.255.255
+First two octet handles the network portion and other 2 octet for Host portion
+
+
+Class C: 192.0.1.0 to 223.255.255.255
+Network portion: First three octets
+Host portion: Last octet
