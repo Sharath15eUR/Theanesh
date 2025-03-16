@@ -1,0 +1,40 @@
+﻿Class of IP address : 
+
+192.168.10.5 The first octet is 192, which falls within the range of Class C (192-223). So, this is a Class C address.
+
+
+172.20.15.1 The first octet is 172, which falls within the range of Class B (128-191). So, this is a Class B address.
+
+
+8.8.8.8 The first octet is 8, which falls within the range of Class A (0-127). So, this is a Class A address.
+
+
+Public or Private : 
+
+192.168.10.5: This falls within the private Class C range (192.168.0.0 - 192.168.255.255), so it is a private IP address.
+
+
+172.20.15.1: This falls within the private Class B range (172.16.0.0 - 172.31.255.255), so it is a private IP address.
+
+
+8.8.8.8: This does not fall within any private range and is a public IP address (commonly used by Google’s DNS servers).
+
+
+NAT (Network Address Translation ) 
+
+Network Address Translation (NAT) is a technique used to allow devices with private IP addresses to access the public internet by translating their private IP addresses into a public IP address. 
+
+When a device with a private IP address (e.g., 192.168.10.5 or 172.20.15.1) sends a request to access the internet, the NAT-enabled router or gateway intercepts the request.
+
+
+The router replaces the private source IP address in the packet header with a public IP address assigned to the router's external interface. 
+It also assigns a unique port number to track the session (this is often called Port Address Translation or PAT when multiple private IPs share a single public IP).
+
+
+The request is then forwarded to the destination on the internet.
+
+
+When the response comes back from the internet, the router uses the port number to match it to the original private IP address and forwards the response to the correct device.
+
+
+This process hides the private IP addresses from the public internet, providing a layer of security and allowing multiple devices to share a single public IP address.
