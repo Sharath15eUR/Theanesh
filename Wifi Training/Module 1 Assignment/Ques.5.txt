@@ -1,0 +1,33 @@
+﻿Bridge Mode : 
+
+
+Bridge mode allows a Wi-Fi device (like an access point or router) to connect two separate networks, effectively "bridging" them so they can communicate as if they were part of the same network.
+
+
+   Working : 
+         The device in bridge mode connects to the main router or network (usually via a wired or wireless connection) and extends the network to another segment.
+          It does not create a new subnet; instead, it keeps all devices on the same IP subnet, meaning devices on both sides of the bridge can communicate directly.
+ Typically used with a wired connection between the main router and the device in bridge mode, though some setups support wireless bridging (e.g., using WDS - Wireless Distribution System).
+  
+  Points :   
+* Does not rebroadcast the Wi-Fi signal (unless using wireless bridging).
+* Devices in bridge mode often disable their DHCP server to avoid IP conflicts, relying on the main router for IP address assignment.
+* Primarily focuses on connecting networks, not extending Wi-Fi coverage.
+
+
+Repeater Mode
+
+
+Repeater mode allows a Wi-Fi device to extend the range of an existing wireless network by receiving the Wi-Fi signal from the main router and rebroadcasting it to cover a larger area.
+
+
+  Working : 
+        The device in repeater mode wirelessly connects to the main router, captures its Wi-Fi signal, and retransmits it to areas with weak or no signal.
+It effectively doubles the coverage area of the Wi-Fi network but often at the cost of reduced bandwidth (since the repeater uses the same wireless channel to both receive and transmit).
+The repeater may use the same SSID as the main router or create a new SSID for the extended network.
+
+
+  Points : 
+* Rebroadcasts the Wi-Fi signal to extend coverage.
+* Typically wireless (no Ethernet cable needed between the repeater and the main router).
+* Can reduce network speed because the repeater has to use the same frequency band to communicate with both the router and the devices, effectively halving the bandwidth unless it’s a dual-band repeater.

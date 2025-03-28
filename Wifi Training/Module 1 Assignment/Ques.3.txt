@@ -1,0 +1,72 @@
+﻿BSS (Basic Service Set) : 
+
+
+A BSS is the basic building block of a Wi-Fi network. It consists of a single access point (AP) and the devices (stations) connected to it, communicating over a shared wireless medium.
+
+Working : 
+* The access point acts as a central hub that coordinates communication between the connected devices within its range.
+
+
+* Devices within a BSS communicate with each other through an Access Point (AP). 
+
+
+* The AP acts as a central point for wireless communication, managing the network and allowing devices to join or leave. 
+
+
+* The BSS is identified by a BSSID (Basic Service Set Identifier), which is typically the MAC address of the access point.
+
+
+* Each BSS is identified by a unique Basic Service Set Identifier (BSSID), which is the MAC address of the AP's radio. 
+
+
+* The AP also broadcasts the Service Set Identifier (SSID), which is the name of the wireless network.
+
+
+When you connect to your home Wi-Fi router, you're part of a BSS. It’s a single, localized network.
+
+
+Types : 
+Infrastructure BSS:           Involves an access point (most common setup).
+Independent BSS (IBSS): A peer-to-peer (ad-hoc) network where devices connect directly without an access point.
+
+
+ESS (Extended Service Set)
+
+
+An ESS is a collection of multiple BSSs (access points) that are interconnected to form a larger wireless network, allowing seamless roaming for connected devices across a wider area.
+
+
+All BSSs within an ESS share the same Service Set Identifier (SSID), meaning users can move between different access points within the ESS without losing their network connection. 
+
+
+All access points in an ESS share the same SSID (Service Set Identifier), which is the network name you see when scanning for Wi-Fi. 
+
+
+The APs are typically connected via a wired backbone (like Ethernet) to ensure devices can move between them without losing connectivity.
+
+
+Aspect
+	    BSS
+	 ESS
+	Scope             
+	Single access point
+	Multiple access points
+	Coverage
+	Limited to one AP’s range
+	Extended across multiple APs
+	Identifier
+	BSSID (unique to AP
+	SSID (shared across APs)
+	Use Case
+	Small, standalone network        
+	Large, interconnected network
+	
+
+
+
+Benefits of ESS:
+
+
+Larger Coverage: Multiple access points can be used to cover a larger area, such as a home, office, or campus. 
+Seamless Roaming: Users can move freely between access points within the ESS without interruption to their network connection. 
+Centralized Management: ESS networks can be managed centrally, simplifying configuration and maintenance.

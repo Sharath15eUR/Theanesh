@@ -1,0 +1,25 @@
+﻿Basic Functionalities of a Wi-Fi Access Point
+
+
+A Wi-Fi access point (AP) is a device that enables wireless devices to connect to a network, typically a wired network like the internet. Here are its primary functionalities:
+
+
+Wireless Connectivity:
+The AP creates a wireless local area network (WLAN) by broadcasting a Wi-Fi signal, allowing devices like smartphones, laptops, and tablets to connect without cables.
+It forms a Basic Service Set (BSS), as mentioned earlier, acting as the central hub for devices within its range to communicate.
+Signal Broadcasting:
+The AP broadcasts a Service Set Identifier (SSID), which is the network name visible to devices when scanning for Wi-Fi.
+It uses radio frequencies (typically 2.4 GHz, 5 GHz, or 6 GHz in newer standards) to transmit and receive data.
+Bridging Wired and Wireless Networks:
+The AP connects to a wired network (e.g., via Ethernet to a router or switch) and extends that connectivity to wireless devices.
+It translates data between the wired network (Ethernet) and the wireless medium (Wi-Fi), ensuring seamless communication.
+Device Coordination:
+The AP manages communication between connected devices within its BSS, ensuring they don’t interfere with each other.
+It uses protocols like CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) to prevent data collisions and manage traffic.
+Security Enforcement:
+The AP enforces security protocols to protect the network, such as WPA2 or WPA3 encryption, to ensure data privacy and prevent unauthorized access.
+It may also support features like MAC address filtering or guest network isolation.
+IP Address Assignment (if applicable):
+In smaller setups, the AP may work with a router (or act as one) to assign IP addresses to connected devices via DHCP (Dynamic Host Configuration Protocol), enabling them to communicate on the network.
+Support for Roaming (in ESS):
+In an Extended Service Set (ESS), the AP collaborates with other APs to allow devices to roam seamlessly between them without losing connection, as long as they share the same SSID.
