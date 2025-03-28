@@ -1,0 +1,69 @@
+﻿The IEEE (Institute of Electrical and Electronics Engineers) and the WFA (Wi-Fi Alliance) play distinct but complementary roles in the world of Wi-Fi technology.
+
+
+IEEE (Institute of Electrical and Electronics Engineers)
+
+
+The IEEE is a professional organization responsible for developing and maintaining technical standards, including those for wireless networking.
+
+
+Specifically, the IEEE 802.11 working group defines the standards for wireless local area networks (WLANs), which form the technical foundation of what we commonly call Wi-Fi. These standards include 802.11a, 802.11b, 802.11g, 802.11n, 802.11ac, 802.11ax (Wi-Fi 6), and so on.
+
+
+The IEEE focuses on the technical specifications—things like frequency bands (2.4 GHz, 5 GHz, 6 GHz), modulation techniques, data rates, and protocols.
+
+
+WFA (Wi-Fi Alliance)
+
+
+The Wi-Fi Alliance is an industry organization composed of companies that promotes Wi-Fi technology and ensures interoperability between devices.
+
+
+The WFA takes the IEEE 802.11 standards and builds on them by creating certification programs. It’s the group that officially brands the technology as "Wi-Fi" (a term they trademarked) and ensures devices from different manufacturers work together seamlessly.
+
+
+The WFA focuses on practical implementation, certification, and marketing. 
+
+
+They test devices for compatibility, security, and performance, and only certified devices can carry the "Wi-Fi Certified" logo. 
+
+
+They also introduce user-friendly names like "Wi-Fi 5" (802.11ac) and "Wi-Fi 6" (802.11ax) to simplify things for consumers.
+
+
+Output: Certification programs (e.g., WPA3 for security, Wi-Fi 6 for performance) and a cohesive ecosystem of interoperable Wi-Fi devices.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aspects 
+	IEEE
+	WFA
+	Purpose
+	Develops the technical standards
+	Ensures those standards are implemented consistently and marketed effectively
+	Scope
+	Purely technical and theoretical focusing on protocols and engineering.
+
+
+	Practical and commercial, focusing on certification, interoperability, and consumer experience.
+	Naming
+	Uses technical designations like 802.11ax.
+	Simplifies these into consumer-friendly terms like Wi-Fi 6.
+	Membership
+	Engineers, researchers, and academics who create standards.
+	Companies (e.g, Cisco) that build and sell Wi-Fi products
